@@ -69,8 +69,7 @@ body {
 .hero-overlay h1 { font-family: 'Orbitron', sans-serif; font-size: 4rem; margin-bottom: 20px; }
 
 /* BOTONES REDONDEADOS PRO */
-.btn-primary, .btn-glow {
-    background: linear-gradient(90deg, var(--primary), var(--accent));
+.btn-primary, .btn-glow, .btn-secondary {
     padding: 14px 40px;
     border-radius: 50px;
     color: white;
@@ -78,12 +77,34 @@ body {
     text-decoration: none;
     transition: 0.4s;
     border: none;
+    display: inline-block;
+}
+
+.btn-primary, .btn-glow {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
 }
 
-.btn-primary:hover, .btn-glow:hover {
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(5px);
+    margin-left: 10px;
+}
+
+.btn-primary:hover, .btn-glow:hover, .btn-secondary:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
+}
+
+/* TITULOS DE SECCIÓN */
+.section-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    padding-top: 100px;
+    color: var(--primary);
+    text-transform: uppercase;
 }
 
 /* PRODUCTOS BENTO GRID */
@@ -116,17 +137,14 @@ body {
     border-radius: 15px;
 }
 
-.badge {
-    position: absolute;
-    top: 25px; left: 25px;
-    background: var(--primary);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.7rem;
+.price { 
+    display: block; 
+    font-size: 1.1rem; 
+    color: #10b981; 
+    margin: 15px 0; 
     font-weight: bold;
+    font-style: italic;
 }
-
-.price { display: block; font-size: 1.5rem; color: #10b981; margin: 15px 0; font-weight: bold; }
 
 .btn-buy {
     width: 100%;
@@ -141,12 +159,22 @@ body {
 
 .btn-buy:hover { background: var(--primary); }
 
-/* FOOTER */
-.main-footer {
-    background: #020617;
-    padding: 60px 5%;
-    border-top: 1px solid var(--glass-border);
-    margin-top: 100px;
+/* SECCIÓN SOPORTE / FORMULARIO */
+.glass-section {
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
 }
 
-.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 40px; }
+.form-wrapper {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-wrapper h2 { margin-bottom: 20px; font-family: 'Orbitron', sans-serif; }
+
+input, textarea {
