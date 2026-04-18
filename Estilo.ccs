@@ -1,8 +1,8 @@
-/* Configuración General */
+/* Configuración General con Fondo Animado */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; [cite: 1, 2]
 }
 
 html {
@@ -12,28 +12,39 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #0f172a; /* Fondo oscuro tipo gaming */
-    color: #e2e8f0;
+    color: #e2e8f0; [cite: 4]
+    /* Fondo con movimiento leve azul/morado */
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow-x: hidden;
 }
 
-/* Navbar Estilizado */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
 #navbar {
-    background: #1e293b;
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px); /* Efecto de cristal */
     color: #fff;
     height: 80px;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000; [cite: 5]
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; [cite: 6]
     width: 90%;
     margin: auto;
 }
@@ -41,202 +52,70 @@ body {
 .logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: bold; [cite: 7]
 }
 
-.logo span {
-    color: #3b82f6;
-}
+.logo span { color: #3b82f6; }
 
-#navbar ul {
-    display: flex;
-    list-style: none;
-}
-
-#navbar ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: color 0.3s;
-}
-
-#navbar ul li a:hover {
-    color: #3b82f6;
-}
-
-/* Hero Section */
-.hero {
-    height: 80vh;
-    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
-                url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 80px;
-}
-
-.hero-content h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 0 0 20px #3b82f6;
-}
-
-.btn-main {
+/* Botones Estilizados y Redondeados */
+.btn-main, .btn-submit {
     display: inline-block;
-    background: #3b82f6;
-    color: white;
-    padding: 12px 30px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white; [cite: 14]
+    padding: 12px 35px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Botón redondeado */
     font-weight: bold;
-    margin-top: 20px;
-    transition: background 0.3s;
+    text-transform: uppercase; [cite: 32]
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
-.btn-main:hover {
-    background: #2563eb;
-    transform: translateY(-3px);
+.btn-main:hover, .btn-submit:hover {
+    transform: scale(1.05); /* Efecto de pulsación */
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+    background: linear-gradient(135deg, #2563eb, #7c3aed); [cite: 15]
 }
 
-/* Cuadrícula de Productos */
-h2 {
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-    margin: 60px 0 30px;
-    font-size: 2rem;
-    color: #3b82f6;
-}
-
-.info-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    width: 90%;
-    margin: auto;
-    padding-bottom: 50px;
-}
-
+/* Tarjetas de Productos */
 .info-box {
-    background: #1e293b;
-    padding: 15px;
-    border-radius: 12px;
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 20px; [cite: 18]
+    border-radius: 20px; /* Esquinas más suaves */
     text-align: center;
-    transition: transform 0.3s ease;
-    border: 1px solid #334155;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .info-box:hover {
     transform: translateY(-10px);
-    border-color: #3b82f6;
+    border-color: #3b82f6; [cite: 19]
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .img-wrapper {
     overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px; [cite: 20]
 }
 
-.info-box img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.info-box:hover img {
-    transform: scale(1.1);
-}
-
-.price {
-    display: block;
-    font-size: 1.2rem;
-    color: #10b981;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/* Animación Especial */
-.special-animation {
-    background: #1e293b;
-    padding: 60px 0;
-    text-align: center;
-}
-
-.anim-box {
-    width: 80px;
-    height: 80px;
-    background: #ef4444;
-    margin: 30px auto;
-    box-shadow: 0 0 15px #ef4444;
-    animation: floating 3s infinite ease-in-out;
-}
-
-@keyframes floating {
-    0% { transform: translateY(0) rotate(0deg); border-radius: 10%; }
-    50% { transform: translateY(-30px) rotate(180deg); border-radius: 50%; background: #3b82f6; box-shadow: 0 0 30px #3b82f6;}
-    100% { transform: translateY(0) rotate(360deg); border-radius: 10%; }
-}
-
-/* Formulario Moderno */
-.contact-section {
-    padding: 80px 20px;
-    background: #0f172a;
-}
-
+/* Ajuste del Formulario */
 form {
     max-width: 600px;
-    margin: auto;
-    background: #1e293b;
+    margin: auto; [cite: 28]
+    background: rgba(30, 41, 59, 0.8);
     padding: 40px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #94a3b8;
+    border-radius: 25px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 input, textarea {
-    background: #334155;
-    border: 1px solid #475569;
+    background: #1e293b;
+    border: 1px solid #334155;
     color: white;
-    margin-bottom: 20px;
-    padding: 12px;
-    border-radius: 5px;
-}
-
-input:focus, textarea:focus {
-    outline: 2px solid #3b82f6;
-}
-
-.btn-submit {
-    background: #ef4444;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.btn-submit:hover {
-    background: #dc2626;
-}
-
-footer {
-    background: #020617;
-    color: #64748b;
-    text-align: center;
-    padding: 40px 0;
+    padding: 15px; [cite: 30]
+    border-radius: 12px;
 }
