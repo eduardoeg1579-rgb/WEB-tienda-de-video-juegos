@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Web - UBA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">MiMarca</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#info">Información</a></li>
+                <li><a href="#animacion-especial">Efecto Especial</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="pagina1.html">Página 1</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio" class="slider">
+        <div class="slide">
+            <h1>Bienvenido a mi Sitio</h1>
+            <p>Desarrollado con técnicas avanzadas de CSS3</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="info" class="info-container">
+            <div class="info-box">
+                <img src="https://via.placeholder.com/300" alt="Imagen 1">
+                <h3>Sección 1</h3>
+                <p>Descripción detallada de la primera sección.</p>
+            </div>
+            <div class="info-box">
+                <img src="https://via.placeholder.com/300" alt="Imagen 2">
+                <h3>Sección 2</h3>
+                <p>Descripción detallada de la segunda sección.</p>
+            </div>
+            <div class="info-box">
+                <img src="https://via.placeholder.com/300" alt="Imagen 3">
+                <h3>Sección 3</h3>
+                <p>Descripción detallada de la tercera sección.</p>
+            </div>
+            <div class="info-box">
+                <img src="https://via.placeholder.com/300" alt="Imagen 4">
+                <h3>Sección 4</h3>
+                <p>Descripción detallada de la cuarta sección.</p>
+            </div>
+        </section>
+
+        <section id="animacion-especial" class="special-animation">
+            <h2>Efecto de Animación CSS3</h2>
+            <div class="anim-box"></div> </section>
+
+        <section id="contacto" class="contact-section">
+            <h2>Contáctanos</h2>
+            <form id="contact-form">
+                <label for="full-name">Nombre y Apellido:</label>
+                <input type="text" id="full-name" name="full-name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Universidad Bicentenaria de Aragua</p>
+            <p><strong>Desarrollado por:</strong> Tu Nombre - C.I: 00.000.000</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
