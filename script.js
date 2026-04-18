@@ -1,7 +1,6 @@
 let cartCount = 0;
 let modalShown = false;
 
-// 1. Carrito y Modal
 document.querySelectorAll('.btn-buy').forEach(button => {
     button.addEventListener('click', function() {
         cartCount++;
@@ -13,7 +12,7 @@ document.querySelectorAll('.btn-buy').forEach(button => {
         }
 
         const originalText = this.innerText;
-        this.innerText = '¡LISTO!';
+        this.innerText = '¡AÑADIDO!';
         this.style.backgroundColor = '#10b981';
 
         setTimeout(() => {
@@ -23,12 +22,10 @@ document.querySelectorAll('.btn-buy').forEach(button => {
     });
 });
 
-// 2. Cerrar Modal
 document.getElementById('close-modal').addEventListener('click', () => {
     document.getElementById('custom-modal').style.display = 'none';
 });
 
-// 3. Formulario
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const user = document.getElementById('full-name').value;
@@ -41,7 +38,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     }, 1000);
 });
 
-// 4. Scroll Suave
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
