@@ -1,5 +1,4 @@
-/* Configuración General con Fondo Animado */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box; [cite: 1, 2]
