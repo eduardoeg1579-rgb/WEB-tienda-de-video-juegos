@@ -13,14 +13,13 @@ body {
     background-color: var(--bg-dark);
     color: #f8fafc;
     overflow-x: hidden;
-    /* Fondo con degradado muy leve que fluye */
     background: radial-gradient(circle at top, #1e293b, #020617);
 }
 
-/* NAVBAR GLASSMORPHISM */
+/* NAVBAR */
 #navbar {
     background: rgba(2, 6, 23, 0.8);
-    backdrop-filter: blur(12px); /* Efecto cristal */
+    backdrop-filter: blur(12px);
     height: 85px;
     position: fixed;
     width: 100%;
@@ -42,17 +41,24 @@ body {
 .logo { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 900; }
 .logo span { color: var(--primary); }
 
-.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
 .nav-links a { 
     text-decoration: none; color: #cbd5e1; 
     text-transform: uppercase; font-size: 0.85rem; font-weight: 700;
     transition: 0.3s;
 }
-.nav-links a:hover { color: var(--primary); }
 
-/* HERO SECTION */
+.cart-indicator {
+    background: var(--primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* HERO */
 .hero-section {
-    height: 90vh;
+    height: 80vh;
     background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -61,220 +67,94 @@ body {
 }
 
 .hero-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     padding: 40px;
     border-radius: 30px;
+    backdrop-filter: blur(5px);
 }
 
-.hero-overlay h1 { font-family: 'Orbitron', sans-serif; font-size: 4rem; margin-bottom: 20px; }
+.hero-overlay h1 { font-family: 'Orbitron', sans-serif; font-size: 3.5rem; margin-bottom: 10px; }
 
-/* BOTONES REDONDEADOS PRO */
+/* BOTONES */
 .btn-primary, .btn-glow, .btn-secondary {
-    padding: 14px 40px;
+    padding: 12px 30px;
     border-radius: 50px;
     color: white;
     font-weight: bold;
     text-decoration: none;
-    transition: 0.4s;
+    transition: 0.3s;
     border: none;
+    cursor: pointer;
     display: inline-block;
 }
 
 .btn-primary, .btn-glow {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(5px);
+    background: rgba(255,255,255,0.1);
     margin-left: 10px;
 }
 
-.btn-primary:hover, .btn-glow:hover, .btn-secondary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
-}
+/* PRODUCTOS */
+.section-title { text-align: center; font-family: 'Orbitron'; margin: 50px 0 20px; color: var(--primary); }
 
-/* TITULOS DE SECCIÓN */
-.section-title {
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    padding-top: 100px;
-    color: var(--primary);
-    text-transform: uppercase;
-}
-
-/* PRODUCTOS BENTO GRID */
 .products-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 40px 5%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 5%;
 }
 
 .product-card {
     background: var(--card-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 15px;
-    transition: 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.product-card:hover {
-    transform: scale(1.02);
-    border-color: var(--primary);
+    transition: 0.3s;
+    text-align: center;
 }
 
 .product-card img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
+    height: 200px;
+    object-fit: contain; /* Para que las consolas se vean completas */
+    margin-bottom: 15px;
 }
 
-.price { 
-    display: block; 
-    font-size: 1.1rem; 
-    color: #10b981; 
-    margin: 15px 0; 
-    font-weight: bold;
-    font-style: italic;
-}
+.price { display: block; color: #10b981; font-weight: bold; margin-bottom: 15px; }
 
 .btn-buy {
     width: 100%;
     background: #334155;
     color: white;
-    padding: 12px;
-    border-radius: 12px;
+    padding: 10px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.btn-buy:hover { background: var(--primary); }
-
-/* SECCIÓN SOPORTE / FORMULARIO */
-.glass-section {
-    padding: 80px 5%;
-    display: flex;
-    justify-content: center;
-}
-
-.form-wrapper {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 30px;
-    border: 1px solid var(--glass-border);
-    max-width: 600px;
-    width: 100%;
-}
-
-.form-wrapper h2 { margin-bottom: 20px; font-family: 'Orbitron', sans-serif; }
-
-input, textarea {
-    /* Estilos para el Contador en el Nav */
-.cart-status {
-    background: rgba(59, 130, 246, 0.2);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    color: var(--primary);
-    border: 1px solid var(--primary);
-}
-
-/* Estilos para el Modal (Ventana Emergente) */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background: var(--bg-dark);
-    padding: 30px;
-    border: 2px solid var(--primary);
-    border-radius: 25px;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 0 50px rgba(59, 130, 246, 0.5);
-}
-
-.modal-content h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
-
-.modal-content p {
-    color: #cbd5e1;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-    /* Indicador de Carrito en Nav */
-.cart-container {
-    background: var(--primary);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: white;
-}
-
-/* ESTILOS DEL MODAL EMERGENTE */
+/* MODAL */
 .modal-overlay {
-    display: none; /* Se activa con JS */
+    display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    z-index: 9999; /* Por encima de todo */
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(10px);
 }
 
-.modal-box {
+.modal-content {
     background: #1e293b;
     padding: 40px;
-    border-radius: 30px;
+    border-radius: 20px;
     border: 2px solid var(--primary);
     text-align: center;
-    max-width: 450px;
-    box-shadow: 0 0 50px rgba(59, 130, 246, 0.4);
+    max-width: 400px;
 }
 
-.modal-box h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--primary);
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
-.modal-box p {
-    color: #cbd5e1;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-/* Ajuste para que las imágenes de productos no se corten */
-.product-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain; /* Para que la consola se vea completa */
-    background: rgba(0,0,0,0.2);
-    border-radius: 15px;
-}
+.modal-content h3 { font-family: 'Orbitron'; color: var(--primary); margin-bottom: 15px; }
