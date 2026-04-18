@@ -1,120 +1,152 @@
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; [cite: 1, 2]
+:root {
+    --primary: #3b82f6;
+    --accent: #8b5cf6;
+    --bg-dark: #020617;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #e2e8f0; [cite: 4]
-    /* Fondo con movimiento leve azul/morado */
-    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: #f8fafc;
     overflow-x: hidden;
+    /* Fondo con degradado muy leve que fluye */
+    background: radial-gradient(circle at top, #1e293b, #020617);
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Navbar */
+/* NAVBAR GLASSMORPHISM */
 #navbar {
-    background: rgba(30, 41, 59, 0.8);
-    backdrop-filter: blur(10px); /* Efecto de cristal */
-    color: #fff;
-    height: 80px;
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(12px); /* Efecto cristal */
+    height: 85px;
     position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1000; [cite: 5]
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; [cite: 6]
-    width: 90%;
-    margin: auto;
+    align-items: center;
 }
 
-.logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold; [cite: 7]
+.logo { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 900; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { 
+    text-decoration: none; color: #cbd5e1; 
+    text-transform: uppercase; font-size: 0.85rem; font-weight: 700;
+    transition: 0.3s;
+}
+.nav-links a:hover { color: var(--primary); }
+
+/* HERO SECTION */
+.hero-section {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.logo span { color: #3b82f6; }
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 30px;
+}
 
-/* Botones Estilizados y Redondeados */
-.btn-main, .btn-submit {
-    display: inline-block;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    color: white; [cite: 14]
-    padding: 12px 35px;
-    text-decoration: none;
-    border-radius: 50px; /* Botón redondeado */
+.hero-overlay h1 { font-family: 'Orbitron', sans-serif; font-size: 4rem; margin-bottom: 20px; }
+
+/* BOTONES REDONDEADOS PRO */
+.btn-primary, .btn-glow {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    padding: 14px 40px;
+    border-radius: 50px;
+    color: white;
     font-weight: bold;
-    text-transform: uppercase; [cite: 32]
-    transition: all 0.3s ease;
+    text-decoration: none;
+    transition: 0.4s;
+    border: none;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:hover, .btn-glow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
+}
+
+/* PRODUCTOS BENTO GRID */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px;
+    padding: 15px;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+    border-color: var(--primary);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.badge {
+    position: absolute;
+    top: 25px; left: 25px;
+    background: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.price { display: block; font-size: 1.5rem; color: #10b981; margin: 15px 0; font-weight: bold; }
+
+.btn-buy {
+    width: 100%;
+    background: #334155;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    transition: 0.3s;
 }
 
-.btn-main:hover, .btn-submit:hover {
-    transform: scale(1.05); /* Efecto de pulsación */
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
-    background: linear-gradient(135deg, #2563eb, #7c3aed); [cite: 15]
+.btn-buy:hover { background: var(--primary); }
+
+/* FOOTER */
+.main-footer {
+    background: #020617;
+    padding: 60px 5%;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 100px;
 }
 
-/* Tarjetas de Productos */
-.info-box {
-    background: rgba(30, 41, 59, 0.6);
-    backdrop-filter: blur(5px);
-    padding: 20px; [cite: 18]
-    border-radius: 20px; /* Esquinas más suaves */
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.info-box:hover {
-    transform: translateY(-10px);
-    border-color: #3b82f6; [cite: 19]
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.img-wrapper {
-    overflow: hidden;
-    border-radius: 15px;
-    margin-bottom: 15px; [cite: 20]
-}
-
-/* Ajuste del Formulario */
-form {
-    max-width: 600px;
-    margin: auto; [cite: 28]
-    background: rgba(30, 41, 59, 0.8);
-    padding: 40px;
-    border-radius: 25px;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-input, textarea {
-    background: #1e293b;
-    border: 1px solid #334155;
-    color: white;
-    padding: 15px; [cite: 30]
-    border-radius: 12px;
-}
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 40px; }
