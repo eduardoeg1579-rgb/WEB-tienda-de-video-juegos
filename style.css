@@ -1,124 +1,62 @@
-:root {
-    --primary: #3b82f6;
-    --accent: #8b5cf6;
-    --bg-dark: #020617;
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
+/* Configuración General */
 body {
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top, #1e293b, #020617);
-    color: #f8fafc;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-#navbar {
-    background: rgba(2, 6, 23, 0.85);
-    backdrop-filter: blur(12px);
-    height: 85px;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid var(--glass-border);
-    display: flex;
-    align-items: center;
-}
-
-.nav-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo { font-family: 'Orbitron'; font-size: 1.8rem; font-weight: 900; }
-.logo span { color: var(--primary); }
-
-.nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
-.nav-links a { text-decoration: none; color: #cbd5e1; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
-
-.cart-indicator {
-    background: var(--primary);
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
-}
-
-.hero-section {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero-overlay h1 { font-family: 'Orbitron'; font-size: 3rem; }
-
-.section-title { text-align: center; font-family: 'Orbitron'; color: var(--primary); margin: 60px 0 20px; }
-
-.products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 20px 5%;
-}
-
-.product-card {
-    background: var(--card-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
+header {
+    background-color: #222;
+    color: white;
     padding: 20px;
     text-align: center;
 }
 
-.product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 10px;
-}
-
-.price { display: block; color: #10b981; font-weight: bold; margin-bottom: 15px; }
-
-.btn-buy, .btn-glow {
-    cursor: pointer;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border: none;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-buy { width: 100%; border-radius: 10px; background: #334155; }
-
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 2000;
-    justify-content: center;
+.container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(8px);
+    padding: 20px;
 }
 
-.modal-content {
-    background: #1e293b;
-    padding: 40px;
-    border-radius: 25px;
-    border: 2px solid var(--primary);
+/* Tarjetas de Consolas */
+.console-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.image-container {
+    flex: 1;
+    background-color: #ddd;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info {
+    flex: 2;
+    padding: 20px;
+}
+
+.info h2 {
+    margin-top: 0;
+}
+
+footer {
     text-align: center;
-    max-width: 400px;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #666;
 }
