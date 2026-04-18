@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UBA GAMES | Tienda Oficial</title>
+    <title>UBA GAMES | Tienda de Consolas</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,77 +16,78 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#consolas">Consolas</a></li>
                 <li><a href="#perifericos">Periféricos</a></li>
-                <li class="cart-status">🛒 <span id="cart-count">0</span> ítems</li>
+                <li class="cart-container">🛒 <span id="cart-count">0</span></li>
             </ul>
         </div>
     </nav>
 
     <header id="inicio" class="hero-section">
         <div class="hero-overlay">
-            <h1>DOMINA EL JUEGO</h1>
-            <p>El mejor hardware y los títulos más esperados.</p>
-            <div class="hero-btns">
-                <a href="#consolas" class="btn-primary">Explorar Consolas</a>
-                <a href="#contacto" class="btn-secondary">Soporte</a>
-            </div>
+            <h1>UNIVERSO GAMING</h1>
+            <p>Hardware de alto rendimiento y clásicos inolvidables.</p>
         </div>
     </header>
 
     <main class="main-content">
         <section id="consolas" class="bento-grid">
-            <h2 class="section-title">Nuestras Consolas</h2>
+            <h2 class="section-title">Consolas Disponibles</h2>
             <div class="products-container">
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1591462343419-798155977112?q=80&w=600" alt="Nintendo Wii">
+                    <img src="https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?q=80&w=500" alt="Nintendo Switch">
+                    <div class="card-info">
+                        <h3>Nintendo Switch</h3>
+                        <p>OLED Model</p>
+                        <span class="price">-- PRECIO --</span>
+                        <button class="btn-buy" data-item="Nintendo Switch">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1591462343419-798155977112?q=80&w=500" alt="Wii">
                     <div class="card-info">
                         <h3>Nintendo Wii</h3>
-                        <p>Retro Gaming</p>
-                        <span class="price">-- AJUSTAR PRECIO --</span>
+                        <p>Motion Control Classic</p>
+                        <span class="price">-- PRECIO --</span>
                         <button class="btn-buy" data-item="Nintendo Wii">Añadir al Carrito</button>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=600" alt="PS5">
+                    <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=500" alt="PS5">
                     <div class="card-info">
                         <h3>PlayStation 5</h3>
-                        <p>Nueva Generación</p>
-                        <span class="price">-- AJUSTAR PRECIO --</span>
+                        <p>8K Support / SSD</p>
+                        <span class="price">-- PRECIO --</span>
                         <button class="btn-buy" data-item="PlayStation 5">Añadir al Carrito</button>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1507457379470-08b8006bc608?q=80&w=600" alt="PS4">
+                    <img src="https://images.unsplash.com/photo-1507457379470-08b8006bc608?q=80&w=500" alt="PS4">
                     <div class="card-info">
-                        <h3>PlayStation 4</h3>
-                        <p>Catálogo Legendario</p>
-                        <span class="price">-- AJUSTAR PRECIO --</span>
+                        <h3>PlayStation 4 Pro</h3>
+                        <p>4K Gaming</p>
+                        <span class="price">-- PRECIO --</span>
                         <button class="btn-buy" data-item="PlayStation 4">Añadir al Carrito</button>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1621259182978-f09e5e2ca07a?q=80&w=600" alt="Xbox Series X">
+                    <img src="https://images.unsplash.com/photo-1621259182978-f09e5e2ca07a?q=80&w=500" alt="Xbox Series X">
                     <div class="card-info">
                         <h3>Xbox Series X</h3>
-                        <p>Poder 4K</p>
-                        <span class="price">-- AJUSTAR PRECIO --</span>
+                        <p>La más potente</p>
+                        <span class="price">-- PRECIO --</span>
                         <button class="btn-buy" data-item="Xbox Series X">Añadir al Carrito</button>
                     </div>
                 </article>
-            </div>
-        </section>
 
-        <section class="bento-grid">
-            <div class="products-container">
                 <article class="product-card">
-                    <div class="badge">Tendencia</div>
                     <img src="https://m.media-amazon.com/images/I/81I6o-Z9i8L._AC_SL1500_.jpg" alt="Warhammer 40k">
                     <div class="card-info">
-                        <h3>Warhammer 40K: Space Marine 2</h3>
-                        <p>Acción Épica</p>
-                        <span class="price">-- AJUSTAR PRECIO --</span>
+                        <h3>Warhammer 40K: SM2</h3>
+                        <p>Videojuego Físico</p>
+                        <span class="price">-- PRECIO --</span>
                         <button class="btn-buy" data-item="Warhammer 40K">Añadir al Carrito</button>
                     </div>
                 </article>
@@ -94,11 +95,11 @@
         </section>
     </main>
 
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <h3>⚠️ Aviso Importante</h3>
-            <p>Has añadido tu primer artículo. Recuerda que ningún producto se apartará hasta que completes tu registro oficial en la página.</p>
-            <button id="close-modal" class="btn-glow">Entendido</button>
+    <div id="modal-alert" class="modal-overlay">
+        <div class="modal-box">
+            <h3>⚠️ AVISO DE RESERVA</h3>
+            <p>Has añadido tu primer artículo. Ten en cuenta que los productos no se apartarán ni reservarán hasta que completes tu registro en UBA GAMES.</p>
+            <button onclick="closeModal()" class="btn-glow">ENTENDIDO</button>
         </div>
     </div>
 
