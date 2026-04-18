@@ -80,11 +80,16 @@ body {
 
 .product-card img {
     width: 100%;
-    height: 180px;
+    height: 220px;
     object-fit: contain;
     margin-bottom: 15px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.02);
     border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
 }
 
 .price { display: block; color: #10b981; font-weight: bold; margin-bottom: 15px; }
