@@ -12,7 +12,7 @@ document.querySelectorAll('.btn-buy').forEach(button => {
         }
 
         const originalText = this.innerText;
-        this.innerText = '¡AÑADIDO!';
+        this.innerText = '¡LISTO!';
         this.style.backgroundColor = '#10b981';
 
         setTimeout(() => {
