@@ -1,19 +1,28 @@
-// Manejo del formulario
+// Manejo del formulario con feedback visual
 document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita que la página se recargue
+    e.preventDefault();
     const user = document.getElementById('full-name').value;
-    alert('¡Excelente ' + user + '! Tu solicitud ha sido enviada al gremio de soporte.');
-    this.reset(); // Limpia el formulario
+    
+    // Cambiar texto del botón temporalmente
+    const btn = this.querySelector('.btn-submit');
+    const originalText = btn.innerText;
+    btn.innerText = 'ENVIANDO...';
+    btn.style.opacity = '0.7';
+
+    setTimeout(() => {
+        alert('¡Excelente ' + user + '! Tu solicitud ha sido procesada.');
+        btn.innerText = originalText;
+        btn.style.opacity = '1';
+        this.reset();
+    }, 1000);
 });
 
-// Efecto de Navbar al hacer Scroll
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('#navbar');
-    if (window.scrollY > 50) {
-        nav.style.background = 'rgba(30, 41, 59, 0.95)';
-        nav.style.height = '70px';
-    } else {
-        nav.style.background = '#1e293b';
-        nav.style.height = '80px';
-    }
+// Suavizar el scroll para los botones de navegación
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
