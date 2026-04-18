@@ -1,22 +1,19 @@
 let cartCount = 0;
 let modalShown = false;
 
-// 1. Lógica de "Añadir al Carrito" y Modal
+// 1. Carrito y Modal
 document.querySelectorAll('.btn-buy').forEach(button => {
     button.addEventListener('click', function() {
-        // Incrementar contador
         cartCount++;
         document.getElementById('cart-count').innerText = cartCount;
 
-        // Mostrar aviso la primera vez
         if (!modalShown) {
             document.getElementById('custom-modal').style.display = 'flex';
             modalShown = true;
         }
 
-        // Feedback visual en el botón
         const originalText = this.innerText;
-        this.innerText = '¡AÑADIDO!';
+        this.innerText = '¡LISTO!';
         this.style.backgroundColor = '#10b981';
 
         setTimeout(() => {
@@ -26,19 +23,17 @@ document.querySelectorAll('.btn-buy').forEach(button => {
     });
 });
 
-// 2. Cerrar el Modal
+// 2. Cerrar Modal
 document.getElementById('close-modal').addEventListener('click', () => {
     document.getElementById('custom-modal').style.display = 'none';
 });
 
-// 3. Manejo del formulario de contacto
+// 3. Formulario
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const user = document.getElementById('full-name').value;
     const btn = this.querySelector('button');
-    
     btn.innerText = 'ENVIANDO...';
-    
     setTimeout(() => {
         alert('¡Excelente ' + user + '! Tu solicitud ha sido procesada.');
         btn.innerText = 'Enviar Mensaje';
@@ -50,13 +45,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
 });
