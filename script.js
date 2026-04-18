@@ -1,14 +1,19 @@
-// Validación simple y efecto de scroll suave adicional si se requiere
+// Manejo del formulario
 document.getElementById('contact-form').addEventListener('submit', function(e) {
-    alert('¡Gracias por tu mensaje! Validaciones requeridas completadas.');
+    e.preventDefault(); // Evita que la página se recargue
+    const user = document.getElementById('full-name').value;
+    alert('¡Excelente ' + user + '! Tu solicitud ha sido enviada al gremio de soporte.');
+    this.reset(); // Limpia el formulario
 });
 
-// Ejemplo de transición por JS para el Navbar al hacer scroll
-window.onscroll = function() {
+// Efecto de Navbar al hacer Scroll
+window.addEventListener('scroll', function() {
     const nav = document.querySelector('#navbar');
-    if (window.scrollY > 100) {
-        nav.style.background = 'rgba(44, 62, 80, 0.9)';
+    if (window.scrollY > 50) {
+        nav.style.background = 'rgba(30, 41, 59, 0.95)';
+        nav.style.height = '70px';
     } else {
-        nav.style.background = '#2c3e50';
+        nav.style.background = '#1e293b';
+        nav.style.height = '80px';
     }
-};
+});
