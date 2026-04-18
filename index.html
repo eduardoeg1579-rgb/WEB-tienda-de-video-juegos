@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBA GAMES | Tu Universo Gaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">UBA<span>GAMES</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#consolas">Consolas</a></li>
+                <li><a href="#perifericos">Periféricos</a></li>
+                <li><a href="#contacto">Soporte</a></li>
+                <li class="cart-indicator">🛒 <span id="cart-count">0</span> ítems</li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero-section">
+        <div class="hero-overlay">
+            <h1>DOMINA EL JUEGO</h1>
+            <p>Hardware de élite y los títulos más esperados del 2026.</p>
+            <div class="hero-btns">
+                <a href="#consolas" class="btn-primary">Ver Consolas</a>
+                <a href="#perifericos" class="btn-secondary">Periféricos</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="consolas" class="bento-grid">
+            <h2 class="section-title">Consolas</h2>
+            <div class="products-container">
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?q=80&w=500" alt="Nintendo Switch">
+                    <div class="card-info">
+                        <h3>Nintendo Switch</h3>
+                        <p>OLED Model</p>
+                        <span class="price">-- PRECIO AQUI --</span>
+                        <button class="btn-buy" data-item="Nintendo Switch">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500" alt="Nintendo Wii">
+                    <div class="card-info">
+                        <h3>Nintendo Wii</h3>
+                        <p>Motion Control</p>
+                        <span class="price">-- PRECIO AQUI --</span>
+                        <button class="btn-buy" data-item="Nintendo Wii">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=500" alt="PS5">
+                    <div class="card-info">
+                        <h3>PlayStation 5</h3>
+                        <p>Next-Gen Console</p>
+                        <span class="price">-- PRECIO AQUI --</span>
+                        <button class="btn-buy" data-item="PlayStation 5">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1507450491953-2ad332ac811a?q=80&w=500" alt="PlayStation 4">
+                    <div class="card-info">
+                        <h3>PlayStation 4</h3>
+                        <p>PS4 Pro Edition</p>
+                        <span class="price">-- PRECIO AQUI --</span>
+                        <button class="btn-buy" data-item="PlayStation 4">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1621259182978-f09e5e2ca07a?q=80&w=500" alt="Xbox Series X">
+                    <div class="card-info">
+                        <h3>Xbox Series X</h3>
+                        <p>Velocity Architecture</p>
+                        <span class="price">-- PRECIO AQUI --</span>
+                        <button class="btn-buy" data-item="Xbox Series X">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="badge">Nuevo</div>
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500" alt="Warhammer 40K">
+                    <div class="card-info">
+                        <h3>Warhammer 40K</h3>
+                        <p>Space Marine 2</p>
+                        <span class="price">-- PRECIO AQUI --</span>
+                        <button class="btn-buy" data-item="Warhammer 40K">Añadir al Carrito</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="perifericos" class="bento-grid">
+            <h2 class="section-title">Periféricos</h2>
+            <div class="products-container">
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=500" alt="Control">
+                    <div class="card-info">
+                        <h3>Control Fantech EOS</h3>
+                        <p>Hall-Effect Joysticks</p>
+                        <span class="price">-- PRECIO AQUI --</span>
+                        <button class="btn-buy" data-item="Control Fantech">Añadir al Carrito</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="glass-section">
+            <div class="form-wrapper">
+                <h2>¿Necesitas Soporte Técnico?</h2>
+                <form id="contact-form">
+                    <input type="text" id="full-name" placeholder="Nombre de Usuario" required>
+                    <input type="email" id="email" placeholder="Correo Electrónico" required>
+                    <textarea id="message" placeholder="Describe tu consulta..." rows="4" required></textarea>
+                    <button type="submit" class="btn-glow">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div>
+                <h3>UBA-GAMES</h3>
+                <p>Tu tienda física y online de confianza.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Quiénes Somos</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Desarrollado por Eduardo Gonzalez - UBA</p>
+    </footer>
+
+    <div id="custom-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>⚠️ ATENCIÓN</h3>
+            <p>Los artículos añadidos <strong>no se reservarán</strong> hasta que completes el registro en nuestra plataforma.</p>
+            <button id="close-modal" class="btn-glow">ENTENDIDO</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
