@@ -51,32 +51,18 @@
                         <button class="btn-buy" data-item="Nintendo Switch" data-max="5">Añadir al Carrito</button>
                     </div>
                 </article>
-
-                <article class="product-card">
-                   <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500" alt="Nintendo Wii">
-                    <div class="card-info">
-                        <h3>Consolas Retro</h3>
-                        <p>Variedad de Modelos</p>
-                        <span class="price">$120.00</span>
-                        <button class="btn-buy" data-item="Consola Retro" data-max="3">Añadir al Carrito</button>
-                    </div>
-                </article>
-
                 <article class="product-card">
                     <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=500" alt="PS5">
                     <div class="card-info">
                         <h3>PlayStation 5</h3>
-                        <p>Digital Edition</p>
                         <span class="price">$500.00</span>
                         <button class="btn-buy" data-item="PlayStation 5" data-max="2">Añadir al Carrito</button>
                     </div>
                 </article>
-
                 <article class="product-card">
-                   <img src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=500" alt="Xbox">
+                    <img src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=500" alt="Xbox">
                     <div class="card-info">
                         <h3>Xbox Series X</h3>
-                        <p>Power Your Dreams</p>
                         <span class="price">$499.00</span>
                         <button class="btn-buy" data-item="Xbox Series X" data-max="2">Añadir al Carrito</button>
                     </div>
@@ -84,52 +70,70 @@
             </div>
         </section>
 
+        <section id="perifericos" class="glass-section">
+            <div class="list-wrapper">
+                <h2 class="section-title">Periféricos y Accesorios</h2>
+                <div class="peripheral-list">
+                    <div class="peri-item"><span>Cable HDMI 2.1 (4K/120Hz)</span> <b>$10</b> <button class="btn-mini" data-item="Cable HDMI" data-max="10">+</button></div>
+                    <div class="peri-item"><span>Adaptador VGA a HDMI</span> <b>$10</b> <button class="btn-mini" data-item="Adaptador VGA" data-max="10">+</button></div>
+                    <div class="peri-item"><span>Capturadora de Video Full HD</span> <b>$10</b> <button class="btn-mini" data-item="Capturadora" data-max="5">+</button></div>
+                    <div class="peri-item"><span>Cámara para Streaming</span> <b>$10</b> <button class="btn-mini" data-item="Cámara" data-max="3">+</button></div>
+                    <div class="peri-item"><span>Adaptador 4K Ultra Connect</span> <b>$10</b> <button class="btn-mini" data-item="Adaptador 4K" data-max="5">+</button></div>
+                    <div class="peri-item"><span>Cable Ethernet Cat6 (5m)</span> <b>$10</b> <button class="btn-mini" data-item="Cable Ethernet" data-max="10">+</button></div>
+                    <div class="peri-item"><span>Cargador Dual para Controles</span> <b>$10</b> <button class="btn-mini" data-item="Cargador Dual" data-max="5">+</button></div>
+                    <div class="peri-item"><span>Dongle Bluetooth 5.0</span> <b>$10</b> <button class="btn-mini" data-item="Bluetooth 5.0" data-max="5">+</button></div>
+                    <div class="peri-item"><span>Protector de Joysticks (Par)</span> <b>$10</b> <button class="btn-mini" data-item="Protectores" data-max="20">+</button></div>
+                    <div class="peri-item"><span>Ventilador Externo Consola</span> <b>$10</b> <button class="btn-mini" data-item="Ventilador" data-max="3">+</button></div>
+                </div>
+            </div>
+        </section>
+
         <section id="contacto" class="glass-section">
-            <div class="form-wrapper">
-                <h2>¿Necesitas Ayuda?</h2>
+            <div class="form-wrapper pro-form">
+                <h2>Servicio Técnico</h2>
+                <p>¿Problemas con tu equipo? Déjanos un mensaje.</p>
                 <form id="contact-form">
-                    <input type="text" id="full-name" placeholder="Tu Nombre" required>
-                    <input type="email" id="email" placeholder="Correo Electrónico" required>
-                    <textarea id="message" placeholder="Escribe tu mensaje..." rows="4" required></textarea>
-                    <button type="submit" class="btn-pro">Enviar Consulta</button>
+                    <div class="input-row">
+                        <input type="text" id="full-name" placeholder="Tu Nombre" required>
+                        <input type="email" id="email" placeholder="Correo Electrónico" required>
+                    </div>
+                    <textarea id="message" placeholder="Describe el fallo de tu consola..." rows="4" required></textarea>
+                    <div class="btn-group-support">
+                        <button type="submit" class="btn-pro">Enviar Ticket</button>
+                        <button type="reset" class="btn-pro-alt">Limpiar</button>
+                    </div>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2026 UBA GAMES | Desarrollado por Eduardo Gonzalez</p>
+        <p>&copy; 2026 UBA GAMES | Eduardo Gonzalez</p>
     </footer>
 
     <div id="registration-modal" class="modal-overlay">
         <div class="modal-content reg-modal">
             <span class="close-btn" id="close-reg">&times;</span>
-            <h2>Crear Cuenta</h2>
-            <p>Ingresa tus datos para procesar tus pedidos</p>
+            <h2>Registro de Usuario</h2>
             <form id="registration-form">
                 <input type="text" id="reg-name" placeholder="Nombre Completo" required>
                 <input type="email" id="reg-email" placeholder="Correo Electrónico" required>
                 <select id="reg-state" required>
                     <option value="" disabled selected>Estado de Venezuela</option>
                     <option value="Amazonas">Amazonas</option>
-                    <option value="Anzoátegui">Anzoátegui</option>
-                    <option value="Aragua">Aragua</option>
-                    <option value="Bolívar">Bolívar</option>
-                    <option value="Carabobo">Carabobo</option>
                     <option value="Distrito Capital">Distrito Capital</option>
-                    <option value="Lara">Lara</option>
-                    <option value="Miranda">Miranda</option>
+                    <option value="Aragua">Aragua</option>
                     <option value="Zulia">Zulia</option>
                 </select>
-                <button type="submit" class="btn-pro">Finalizar Registro</button>
+                <button type="submit" class="btn-pro">Crear Cuenta</button>
             </form>
         </div>
     </div>
 
     <div id="custom-modal" class="modal-overlay">
         <div class="modal-content">
-            <h3>⚠️ ATENCIÓN</h3>
-            <p>Los artículos en el carrito <strong>no se reservan</strong> hasta que completes tu registro.</p>
+            <h3>⚠️ IMPORTANTE</h3>
+            <p>Debes estar registrado para que podamos apartar tus artículos físicamente.</p>
             <button id="close-notice" class="btn-pro">Entendido</button>
         </div>
     </div>
