@@ -1,27 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<section id="registro" class="glass-section">
-    <div class="form-wrapper">
-        <h2 id="reg-title">¿Listo para unirte?</h2>
-        
-        <button id="show-reg-btn" class="btn-glow-pro">REGISTRARME AHORA</button>
-
-        <form id="registration-form" class="hidden-form">
-            <div class="input-group">
-                <input type="text" id="reg-name" placeholder="Nombre Completo" required>
-                <input type="email" id="reg-email" placeholder="Correo Electrónico" required>
-                <select id="reg-state" required>
-                    <option value="" disabled selected>Selecciona tu Estado</option>
-                    <option value="Amazonas">Distrito Capital</option>
-                    <option value="Anzoátegui">Aragua</option>
-                    <option value="Distrito Capital">Apure</option>
-                    <option value="Zulia">Zulia</option>
-                </select>
-            </div>
-            <button type="submit" class="btn-glow-pro">CONFIRMAR REGISTRO</button>
-        </form>
-    </div>
-</section>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,11 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="btn-buy" data-item="Nintendo Switch" data-max="5">Añadir al Carrito</button>
-<div id="cart-details" style="display:none; position: fixed; top: 90px; right: 5%; background: var(--card-bg); padding: 15px; border-radius: 10px; border: 1px solid var(--primary); z-index: 1000;">
-    <h4>Tus Artículos:</h4>
-    <ul id="cart-items-list" style="list-style: none; font-size: 0.8rem;"></ul>
-</div>
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">UBA<span>GAMES</span></div>
@@ -42,34 +15,40 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#consolas">Consolas</a></li>
                 <li><a href="#perifericos">Periféricos</a></li>
-                <li><a href="#contacto">Soporte</a></li>
-                <li class="cart-indicator">🛒 <span id="cart-count">0</span> ítems</li>
+                <li><a href="#" id="open-reg-btn">Registro</a></li>
+                <li class="cart-indicator" id="cart-icon">🛒 <span id="cart-count">0</span> ítems</li>
             </ul>
         </div>
     </nav>
+
+    <div id="cart-details" class="cart-list-popup">
+        <h4>Tu Carrito</h4>
+        <ul id="cart-items-list"></ul>
+        <p id="empty-cart-msg">El carrito está vacío</p>
+    </div>
 
     <header id="inicio" class="hero-section">
         <div class="hero-overlay">
             <h1>DOMINA EL JUEGO</h1>
             <p>Hardware de élite y los títulos más esperados del 2026.</p>
             <div class="hero-btns">
-                <a href="#consolas" class="btn-primary">Ver Consolas</a>
-                <a href="#perifericos" class="btn-secondary">Periféricos</a>
+                <a href="#consolas" class="btn-pro">Ver Consolas</a>
+                <button id="main-reg-btn" class="btn-pro-alt">Registrarme Ahora</button>
             </div>
         </div>
     </header>
 
     <main class="main-content">
-        <section id="consolas" class="bento-grid">
-            <h2 class="section-title">Consolas</h2>
+        <section id="consolas">
+            <h2 class="section-title">Nuestras Consolas</h2>
             <div class="products-container">
                 <article class="product-card">
                     <img src="https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?q=80&w=500" alt="Nintendo Switch">
                     <div class="card-info">
                         <h3>Nintendo Switch</h3>
                         <p>OLED Model</p>
-                        <span class="price">-- PRECIO AQUI --</span>
-                        <button class="btn-buy" data-item="Nintendo Switch">Añadir al Carrito</button>
+                        <span class="price">$350.00</span>
+                        <button class="btn-buy" data-item="Nintendo Switch" data-max="5">Añadir al Carrito</button>
                     </div>
                 </article>
 
@@ -77,9 +56,9 @@
                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=500" alt="Nintendo Wii">
                     <div class="card-info">
                         <h3>Consolas Retro</h3>
-                        <p>Nuevas y Usadas</p>
-                        <span class="price">-- PRECIO AQUI --</span>
-                        <button class="btn-buy" data-item="Nintendo Wii">Añadir al Carrito</button>
+                        <p>Variedad de Modelos</p>
+                        <span class="price">$120.00</span>
+                        <button class="btn-buy" data-item="Consola Retro" data-max="3">Añadir al Carrito</button>
                     </div>
                 </article>
 
@@ -87,54 +66,19 @@
                     <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=500" alt="PS5">
                     <div class="card-info">
                         <h3>PlayStation 5</h3>
-                        <p>Next-Gen Console</p>
-                        <span class="price">-- PRECIO AQUI --</span>
-                        <button class="btn-buy" data-item="PlayStation 5">Añadir al Carrito</button>
+                        <p>Digital Edition</p>
+                        <span class="price">$500.00</span>
+                        <button class="btn-buy" data-item="PlayStation 5" data-max="2">Añadir al Carrito</button>
                     </div>
                 </article>
 
                 <article class="product-card">
-                   <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps4-pro-image-block-01-en-24jul20?$native--t$" alt="PlayStation 4">
+                   <img src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=500" alt="Xbox">
                     <div class="card-info">
-                        <h3>PlayStation 4</h3>
-                        <p>PS4 Pro Edition</p>
-                        <span class="price">-- PRECIO AQUI --</span>
-                        <button class="btn-buy" data-item="PlayStation 4">Añadir al Carrito</button>
-                    </div>
-                </article>
-                <article class="product-card">
-                   <img src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=500" alt="Xbox Series X">
-                    <div class="card-info">
-                        <h3>Xbox One</h3>
-                        <p>Velocity Architecture</p>
-                        <span class="price">-- PRECIO AQUI --</span>
-                        <button class="btn-buy" data-item="Xbox Series X">Añadir al Carrito</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="badge">Nuevo</div>
-                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=500" alt="Warhammer 40K">
-                    <div class="card-info">
-                        <h3>Warhammer 40K</h3>
-                        <p>Space Marine 2</p>
-                        <span class="price">-- PRECIO AQUI --</span>
-                        <button class="btn-buy" data-item="Warhammer 40K">Añadir al Carrito</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="perifericos" class="bento-grid">
-            <h2 class="section-title">Periféricos</h2>
-            <div class="products-container">
-                <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=500" alt="Control">
-                    <div class="card-info">
-                        <h3>Control Fantech EOS</h3>
-                        <p>Hall-Effect Joysticks</p>
-                        <span class="price">-- PRECIO AQUI --</span>
-                        <button class="btn-buy" data-item="Control Fantech">Añadir al Carrito</button>
+                        <h3>Xbox Series X</h3>
+                        <p>Power Your Dreams</p>
+                        <span class="price">$499.00</span>
+                        <button class="btn-buy" data-item="Xbox Series X" data-max="2">Añadir al Carrito</button>
                     </div>
                 </article>
             </div>
@@ -142,37 +86,51 @@
 
         <section id="contacto" class="glass-section">
             <div class="form-wrapper">
-                <h2>¿Necesitas Soporte Técnico?</h2>
+                <h2>¿Necesitas Ayuda?</h2>
                 <form id="contact-form">
-                    <input type="text" id="full-name" placeholder="Nombre de Usuario" required>
+                    <input type="text" id="full-name" placeholder="Tu Nombre" required>
                     <input type="email" id="email" placeholder="Correo Electrónico" required>
-                    <textarea id="message" placeholder="Describe tu consulta..." rows="4" required></textarea>
-                    <button type="submit" class="btn-glow">Enviar Mensaje</button>
+                    <textarea id="message" placeholder="Escribe tu mensaje..." rows="4" required></textarea>
+                    <button type="submit" class="btn-pro">Enviar Consulta</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <div class="footer-grid">
-            <div>
-                <h3>UBA-GAMES</h3>
-                <p>Tu tienda física y online de confianza.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Enlaces Rápidos</h4>
-                <a href="#">Términos y Condiciones</a>
-                <a href="#">Quiénes Somos</a>
-            </div>
-        </div>
-        <p class="copyright">&copy; 2026 Desarrollado por Eduardo Gonzalez - UBA</p>
+        <p>&copy; 2026 UBA GAMES | Desarrollado por Eduardo Gonzalez</p>
     </footer>
+
+    <div id="registration-modal" class="modal-overlay">
+        <div class="modal-content reg-modal">
+            <span class="close-btn" id="close-reg">&times;</span>
+            <h2>Crear Cuenta</h2>
+            <p>Ingresa tus datos para procesar tus pedidos</p>
+            <form id="registration-form">
+                <input type="text" id="reg-name" placeholder="Nombre Completo" required>
+                <input type="email" id="reg-email" placeholder="Correo Electrónico" required>
+                <select id="reg-state" required>
+                    <option value="" disabled selected>Estado de Venezuela</option>
+                    <option value="Amazonas">Amazonas</option>
+                    <option value="Anzoátegui">Anzoátegui</option>
+                    <option value="Aragua">Aragua</option>
+                    <option value="Bolívar">Bolívar</option>
+                    <option value="Carabobo">Carabobo</option>
+                    <option value="Distrito Capital">Distrito Capital</option>
+                    <option value="Lara">Lara</option>
+                    <option value="Miranda">Miranda</option>
+                    <option value="Zulia">Zulia</option>
+                </select>
+                <button type="submit" class="btn-pro">Finalizar Registro</button>
+            </form>
+        </div>
+    </div>
 
     <div id="custom-modal" class="modal-overlay">
         <div class="modal-content">
             <h3>⚠️ ATENCIÓN</h3>
-            <p>Los artículos añadidos <strong>no se reservarán</strong> hasta que completes el registro en nuestra plataforma.</p>
-            <button id="close-modal" class="btn-glow">ENTENDIDO</button>
+            <p>Los artículos en el carrito <strong>no se reservan</strong> hasta que completes tu registro.</p>
+            <button id="close-notice" class="btn-pro">Entendido</button>
         </div>
     </div>
 
