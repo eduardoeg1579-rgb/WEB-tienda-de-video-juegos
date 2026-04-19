@@ -70,69 +70,31 @@ document.getElementById('registration-form').addEventListener('submit', function
 document.getElementById('close-modal').addEventListener('click', () => {
     document.getElementById('custom-modal').style.display = 'none';
 });
-/* Barra de navegación estática en la parte superior */
-#navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2000;
-    background: rgba(2, 6, 23, 0.9);
-    backdrop-filter: blur(15px);
-    border-bottom: 2px solid var(--primary);
+// Lógica para mostrar el formulario de registro
+const showRegBtn = document.getElementById('show-reg-btn');
+const regForm = document.getElementById('registration-form');
+const regTitle = document.getElementById('reg-title');
+
+if (showRegBtn) {
+    showRegBtn.addEventListener('click', function() {
+        // Ocultar el botón inicial con una transición
+        this.style.display = 'none';
+        
+        // Mostrar el formulario
+        regForm.style.display = 'flex';
+        
+        // Cambiar el título
+        regTitle.innerText = 'Completa tus datos';
+    });
 }
 
-/* Espacio para que el contenido no quede debajo de la barra fija */
-body {
-    padding-top: 85px;
-}
-
-/* Botones con estilo Pro (No planos) */
-.btn-glow-pro, .btn-buy {
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    border-radius: 12px;
-    font-weight: 800;
-    font-family: 'Orbitron';
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-    letter-spacing: 1px;
-}
-
-.btn-glow-pro:hover, .btn-buy:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
-    filter: brightness(1.1);
-}
-
-.btn-glow-pro:active {
-    transform: translateY(1px);
-}
-
-/* Ocultar formulario inicialmente */
-.hidden-form {
-    display: none;
-    flex-direction: column;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Inputs con estilo */
-.input-group input, .input-group select {
-    width: 100%;
-    margin-bottom: 15px;
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid var(--primary);
-    padding: 12px;
-    border-radius: 8px;
-    color: white;
-    outline: none;
-}
+// Asegurarnos de que el aviso de "No reserva" funcione con los nuevos botones
+document.querySelectorAll('.btn-buy').forEach(button => {
+    button.addEventListener('click', function() {
+        // ... (aquí va la lógica que ya tenías de sumar al carrito)
+        if (!modalShown) {
+            document.getElementById('custom-modal').style.display = 'flex';
+            modalShown = true;
+        }
+    });
+});
