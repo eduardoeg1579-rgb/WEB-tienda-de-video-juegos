@@ -98,3 +98,31 @@ document.querySelectorAll('.btn-buy').forEach(button => {
         }
     });
 });
+// Lógica para mostrar el formulario de registro
+const showRegBtn = document.getElementById('show-reg-btn');
+const regForm = document.getElementById('registration-form');
+const regTitle = document.getElementById('reg-title');
+
+if (showRegBtn) {
+    showRegBtn.addEventListener('click', function() {
+        // Ocultar el botón inicial con una transición
+        this.style.display = 'none';
+        
+        // Mostrar el formulario
+        regForm.style.display = 'flex';
+        
+        // Cambiar el título
+        regTitle.innerText = 'Completa tus datos';
+    });
+}
+
+// Asegurarnos de que el aviso de "No reserva" funcione con los nuevos botones
+document.querySelectorAll('.btn-buy').forEach(button => {
+    button.addEventListener('click', function() {
+        // ... (aquí va la lógica que ya tenías de sumar al carrito)
+        if (!modalShown) {
+            document.getElementById('custom-modal').style.display = 'flex';
+            modalShown = true;
+        }
+    });
+});
