@@ -2,38 +2,23 @@
 <html lang="es">
 <section id="registro" class="glass-section">
     <div class="form-wrapper">
-        <h2>Crea tu Cuenta</h2>
-        <form id="registration-form">
-            <input type="text" id="reg-name" placeholder="Nombre Completo" required>
-            <input type="email" id="reg-email" placeholder="Correo Electrónico" required>
-            <select id="reg-state" required>
-                <option value="" disabled selected>Selecciona tu Estado</option>
-                <option value="Amazonas">Amazonas</option>
-                <option value="Anzoátegui">Anzoátegui</option>
-                <option value="Apure">Apure</option>
-                <option value="Aragua">Aragua</option>
-                <option value="Barinas">Barinas</option>
-                <option value="Bolívar">Bolívar</option>
-                <option value="Carabobo">Carabobo</option>
-                <option value="Cojedes">Cojedes</option>
-                <option value="Delta Amacuro">Delta Amacuro</option>
-                <option value="Distrito Capital">Distrito Capital</option>
-                <option value="Falcón">Falcón</option>
-                <option value="Guárico">Guárico</option>
-                <option value="Lara">Lara</option>
-                <option value="Mérida">Mérida</option>
-                <option value="Miranda">Miranda</option>
-                <option value="Monagas">Monagas</option>
-                <option value="Nueva Esparta">Nueva Esparta</option>
-                <option value="Portuguesa">Portuguesa</option>
-                <option value="Sucre">Sucre</option>
-                <option value="Táchira">Táchira</option>
-                <option value="Trujillo">Trujillo</option>
-                <option value="Vargas">La Guaira</option>
-                <option value="Yaracuy">Yaracuy</option>
-                <option value="Zulia">Zulia</option>
-            </select>
-            <button type="submit" class="btn-glow">Registrarme</button>
+        <h2 id="reg-title">¿Listo para unirte?</h2>
+        
+        <button id="show-reg-btn" class="btn-glow-pro">REGISTRARME AHORA</button>
+
+        <form id="registration-form" class="hidden-form">
+            <div class="input-group">
+                <input type="text" id="reg-name" placeholder="Nombre Completo" required>
+                <input type="email" id="reg-email" placeholder="Correo Electrónico" required>
+                <select id="reg-state" required>
+                    <option value="" disabled selected>Selecciona tu Estado</option>
+                    <option value="Amazonas">Amazonas</option>
+                    <option value="Anzoátegui">Anzoátegui</option>
+                    <option value="Distrito Capital">Distrito Capital</option>
+                    <option value="Zulia">Zulia</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-glow-pro">CONFIRMAR REGISTRO</button>
         </form>
     </div>
 </section>
