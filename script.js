@@ -1,128 +1,81 @@
 let cartCount = 0;
 let modalShown = false;
-let inventory = {}; // Para rastrear stock por producto
-let cartList = [];  // Para guardar los nombres
+let inventory = {}; // Para el límite por artículo
+let cartItems = []; // Para los nombres
 
+// 1. Lógica del Carrito y Límites
 document.querySelectorAll('.btn-buy').forEach(button => {
     button.addEventListener('click', function() {
         const itemName = this.getAttribute('data-item');
-        const maxStock = parseInt(this.getAttribute('data-max'));
-        
-        // Inicializar inventario si no existe
+        const maxAllowed = parseInt(this.getAttribute('data-max'));
+
+        // Inicializar si no existe
         if (!inventory[itemName]) inventory[itemName] = 0;
 
-        // Validación de Aforo/Límite
-        if (inventory[itemName] < maxStock) {
+        if (inventory[itemName] < maxAllowed) {
             inventory[itemName]++;
             cartCount++;
-            cartList.push(itemName);
+            cartItems.push(itemName);
             
-            // Actualizar UI
+            // Actualizar interfaz
             document.getElementById('cart-count').innerText = cartCount;
-            updateCartList();
+            updateCartUI();
 
-            // Mostrar aviso de "No reservado" solo la primera vez
+            // Mostrar aviso de registro (solo una vez)
             if (!modalShown) {
                 document.getElementById('custom-modal').style.display = 'flex';
                 modalShown = true;
             }
 
-            // Feedback visual del botón
+            // Efecto visual en el botón
             const originalText = this.innerText;
-            this.innerText = '¡AGREGADO!';
-            this.style.backgroundColor = '#10b981';
-            setTimeout(() => {
-                this.innerText = originalText;
-                this.style.backgroundColor = '';
-            }, 800);
-
+            this.innerText = '¡AÑADIDO!';
+            setTimeout(() => { this.innerText = originalText; }, 800);
         } else {
-            alert(`Lo sentimos, el aforo máximo de ${itemName} es de ${maxStock} unidades.`);
+            alert(`Límite alcanzado: Solo puedes llevar un máximo de ${maxAllowed} unidades de ${itemName}.`);
         }
     });
 });
 
-// Función para mostrar nombres en el carrito
-function updateCartList() {
-    const listContainer = document.getElementById('cart-details');
-    const listUl = document.getElementById('cart-items-list');
-    listContainer.style.display = 'block';
-    listUl.innerHTML = '';
+function updateCartUI() {
+    const list = document.getElementById('cart-items-list');
+    const container = document.getElementById('cart-details');
     
-    cartList.forEach(item => {
+    container.style.display = 'block';
+    list.innerHTML = ''; // Limpiar
+    
+    cartItems.forEach(item => {
         const li = document.createElement('li');
+        li.style.fontSize = '0.8rem';
+        li.style.marginBottom = '5px';
         li.innerText = `• ${item}`;
-        listUl.appendChild(li);
+        list.appendChild(li);
     });
 }
 
-// Registro de Usuario
-document.getElementById('registration-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('reg-name').value;
-    const state = document.getElementById('reg-state').value;
-    
-    alert(`¡Bienvenido ${name}! Tu registro en el estado ${state} ha sido exitoso.`);
-    this.reset();
-});
+// 2. Lógica para revelar Registro
+const showRegBtn = document.getElementById('show-reg-btn');
+const regInitial = document.getElementById('reg-initial-view');
+const regForm = document.getElementById('registration-form');
 
-// Cerrar Modal
+if (showRegBtn) {
+    showRegBtn.addEventListener('click', () => {
+        regInitial.style.display = 'none';
+        regForm.style.display = 'flex';
+        document.getElementById('reg-title').innerText = 'Completa tus Datos';
+    });
+}
+
+// 3. Cerrar Modal
 document.getElementById('close-modal').addEventListener('click', () => {
     document.getElementById('custom-modal').style.display = 'none';
 });
-// Lógica para mostrar el formulario de registro
-const showRegBtn = document.getElementById('show-reg-btn');
-const regForm = document.getElementById('registration-form');
-const regTitle = document.getElementById('reg-title');
 
-if (showRegBtn) {
-    showRegBtn.addEventListener('click', function() {
-        // Ocultar el botón inicial con una transición
-        this.style.display = 'none';
-        
-        // Mostrar el formulario
-        regForm.style.display = 'flex';
-        
-        // Cambiar el título
-        regTitle.innerText = 'Completa tus datos';
-    });
-}
-
-// Asegurarnos de que el aviso de "No reserva" funcione con los nuevos botones
-document.querySelectorAll('.btn-buy').forEach(button => {
-    button.addEventListener('click', function() {
-        // ... (aquí va la lógica que ya tenías de sumar al carrito)
-        if (!modalShown) {
-            document.getElementById('custom-modal').style.display = 'flex';
-            modalShown = true;
-        }
-    });
-});
-// Lógica para mostrar el formulario de registro
-const showRegBtn = document.getElementById('show-reg-btn');
-const regForm = document.getElementById('registration-form');
-const regTitle = document.getElementById('reg-title');
-
-if (showRegBtn) {
-    showRegBtn.addEventListener('click', function() {
-        // Ocultar el botón inicial con una transición
-        this.style.display = 'none';
-        
-        // Mostrar el formulario
-        regForm.style.display = 'flex';
-        
-        // Cambiar el título
-        regTitle.innerText = 'Completa tus datos';
-    });
-}
-
-// Asegurarnos de que el aviso de "No reserva" funcione con los nuevos botones
-document.querySelectorAll('.btn-buy').forEach(button => {
-    button.addEventListener('click', function() {
-        // ... (aquí va la lógica que ya tenías de sumar al carrito)
-        if (!modalShown) {
-            document.getElementById('custom-modal').style.display = 'flex';
-            modalShown = true;
-        }
+// 4. Smooth Scroll para los enlaces
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
 });
