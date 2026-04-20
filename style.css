@@ -69,3 +69,66 @@ input, select, textarea { width: 100%; padding: 12px; background: #1e293b; borde
 .modal-content { background: #0f172a; padding: 40px; border-radius: 25px; border: 2px solid var(--primary); text-align: center; max-width: 450px; width: 90%; position: relative; }
 .close-btn { position: absolute; top: 15px; right: 20px; font-size: 2rem; cursor: pointer; color: #94a3b8; }
 .section-title { text-align: center; font-family: 'Orbitron'; margin: 40px 0; color: var(--primary); }
+
+/* ESTRUCTURA DE DISEÑO (GRID) */
+.layout-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3 partes para contenido, 1 parte para el lateral */
+    gap: 30px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px auto;
+}
+
+/* BARRA LATERAL (ASIDE) */
+.sidebar-curiosities {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 25px;
+    height: fit-content;
+    position: sticky; /* Se queda fija al hacer scroll */
+    top: 100px;
+}
+
+.aside-title {
+    font-family: 'Orbitron';
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+.curiosity-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+}
+
+.curiosity-card h4 {
+    color: var(--accent);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.curiosity-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #cbd5e1;
+}
+
+/* RESPONSIVE: En celulares el lateral se va abajo */
+@media (max-width: 992px) {
+    .layout-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .sidebar-curiosities {
+        position: static;
+        order: 2; /* Aparece después de las consolas en móvil */
+    }
+}
