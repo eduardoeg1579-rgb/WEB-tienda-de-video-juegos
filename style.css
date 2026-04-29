@@ -20,7 +20,7 @@ body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at t
 .nav-links a { text-decoration: none; color: #cbd5e1; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary); }
 
-/* BOTONES PRO */
+/* BOTONES Nuevos */
 .btn-pro, .btn-buy, .btn-pro-alt, .btn-mini {
     cursor: pointer;
     background: linear-gradient(135deg, var(--primary), var(--accent));
